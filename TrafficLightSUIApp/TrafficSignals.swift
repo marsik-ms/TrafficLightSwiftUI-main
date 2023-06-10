@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct TrafficSignals: View {
     let color: Color
     let isHighlighted: Bool
@@ -20,8 +18,6 @@ struct TrafficSignals: View {
                 .frame(width: 150, height: 150)
                 .overlay(Circle().stroke(Color.black, lineWidth: 1))
                 .shadow(radius: 10)
-                
-                
             
             if isHighlighted {
                 Circle()

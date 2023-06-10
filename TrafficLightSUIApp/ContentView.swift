@@ -19,17 +19,17 @@ struct ContentView: View {
         
         VStack {
             TrafficSignals(color: colors[0], isHighlighted: isHighlighted[0])
-                    .onTapGesture {
-                        toggleHighlighted(index: 0)
-                    }
-                TrafficSignals(color: colors[1], isHighlighted: isHighlighted[1])
-                    .onTapGesture {
-                        toggleHighlighted(index: 1)
-                    }
-                TrafficSignals(color: colors[2], isHighlighted: isHighlighted[2])
-                    .onTapGesture {
-                        toggleHighlighted(index: 2)
-                    }
+                .onTapGesture {
+                    toggleHighlighted(index: 0)
+                }
+            TrafficSignals(color: colors[1], isHighlighted: isHighlighted[1])
+                .onTapGesture {
+                    toggleHighlighted(index: 1)
+                }
+            TrafficSignals(color: colors[2], isHighlighted: isHighlighted[2])
+                .onTapGesture {
+                    toggleHighlighted(index: 2)
+                }
             
             Spacer()
             
@@ -39,14 +39,14 @@ struct ContentView: View {
                 self.resetHighlighted()
                 self.isHighlighted[self.currentColorIndex] = true
             }) {
-                    Text(buttonText)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(20)
-                }
-                .buttonStyle(.plain)
+                Text(buttonText)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(20)
+            }
+            .buttonStyle(.plain)
         }
         .padding()
     }
@@ -56,10 +56,9 @@ struct ContentView: View {
     }
     
     func resetHighlighted() {
-            isHighlighted = Array(repeating: false, count: colors.count)
-        }
+        isHighlighted = Array(repeating: false, count: colors.count)
+    }
 }
-    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
